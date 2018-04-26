@@ -1,0 +1,137 @@
+HTML是什么，HTML5是什么
+    html是超文本标记语言 (Hyper Text Markup Language)
+    html5最新的html标准，拥有新的语义、图形及多媒体元素
+
+HTML元素标签、属性都是什么概念？
+    html元素是从开始标签（start tag）到结束标签（end tag）的所有代码。
+        如：<h1>大标题</h1>
+        元素的内容是开始标签与结束标签之间的内容，（大标题）就是
+    html是由标签来描述网页的，标签是成对出现的，如<img></img>
+    属性提供了有关 HTML 元素的更多的信息。
+        属性总是以名称/值对的形式出现，比如：name="value"。
+        属性总是在 HTML 元素的开始标签中规定。
+
+文档类型是什么概念，起什么作用？
+    DTD 文档类型定义 Document Type Definition
+        DTD是为新标记建立文档并进行规范说明。通俗的来说，DTD就是一套关于标记符的语法规则，是html的验证机制。
+        DTD定义了文档中的元素(标记和属性)和实体，以及相互关系。数据和结构分离。 
+        通过DTD验证XML文档的有效性。DTD为解析器提供了解析XML文档的依据。 
+        所以每个XML文档必须指定对于哪个DTD有效。
+    DOCTYPE
+        这个标签是一种通用标记语言的文档类型声明，它主要就是告诉标准通用标记语言解析器应该使用什么样的DTD来解析文档。
+        DOCTYPE不存在或格式不正确会导致文档以兼容模式呈现。
+        HTML5   <!DOCTYPE html>
+        HTML 4.01 Strict   <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+        HTML 4.01 Transitional    <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" 
+    "http://www.w3.org/TR/html4/loose.dtd">
+        HTML 4.01 Frameset <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Frameset//EN" 
+    "http://www.w3.org/TR/html4/frameset.dtd">
+
+meta标签都用来做什么的？
+    W3C文档如是说：
+        元数据（Metadata）是数据的数据信息。
+        <meta> 标签提供了 HTML 文档的元数据。元数据不会显示在客户端，但是会被浏览器解析。
+        META元素通常用于指定网页的描述，关键词，文件的最后修改时间，作者及其他元数据。
+        元数据可以被使用浏览器（如何显示内容或重新加载页面），搜索引擎（关键词），或其他 Web 服务调用。
+    属性：
+        name 用来表示其所在<meta>标签具体的作用，比如<meta name="keywords">则指明该meta标签使用来定义该页面的关键字的，利于SEO
+            A. keywords(关键字) 用于告诉搜索引擎，你网页的关键字。
+                <meta name="keywords" content="Lxxyx,博客，前端">
+            B. description(网站内容的描述) 用于告诉搜索引擎，你网站的主要内容。
+                <meta name="description" content="文科生，热爱前端与编程。目前大二，这是我的前端博客">
+            C. viewport(移动端的窗口) 这个属性常用于设计移动端网页。在用bootstrap,AmazeUI等框架时候都有用过viewport。
+                <meta name="viewport" content="width=device-width, initial-scale=1">
+            D. robots(定义搜索引擎爬虫的索引方式) robots用来告诉爬虫哪些页面需要索引，哪些页面不需要索引。默认是all。
+                content的参数有
+                1.none : 搜索引擎将忽略此网页，等价于noindex，nofollow。
+                2.noindex : 搜索引擎不索引此网页。
+                3.nofollow: 搜索引擎不继续通过此网页的链接索引搜索其它的网页。
+                4.all : 搜索引擎将索引此网页与继续通过此网页的链接索引，等价于index，follow。
+                5.index : 搜索引擎索引此网页。
+                6.follow : 搜索引擎继续通过此网页的链接索引搜索其它的网页。
+                <meta name="robots" content="none">
+            E. author(作者) 用于标注网页作者
+                <meta name="author" content="Lxxyx,841380530@qq.com">
+            F. generator(网页制作软件) 用于标明网页是什么软件做的
+            G. copyright(版权) 用于标注版权信息
+            H. revisit-after(搜索引擎爬虫重访时间) 如果页面不是经常更新，为了减轻搜索引擎爬虫对服务器带来的压力，可以设置一个爬虫的重访时间。如果重访时间过短，爬虫将按它们定义的默认时间来访问。
+                <meta name="revisit-after" content="7 days" > 
+            I. renderer(双核浏览器渲染方式) renderer是为双核浏览器准备的，用于指定双核浏览器默认以何种方式渲染页面。比如说360浏览器。
+                <meta name="renderer" content="webkit"> //默认webkit内核
+                <meta name="renderer" content="ie-comp"> //默认IE兼容模式
+                <meta name="renderer" content="ie-stand"> //默认IE标准模式
+
+        http-equiv 它的作用和name属性差不多，就是用来指定meta标签的作用，但是不同的是它会关联到HTTP头部的一些作用，也影响就是浏览器发送http请求和浏览器引擎的行为，可能这样说不太对，差不多就这意思
+            A. content-Type(设定网页字符集)(推荐使用HTML5的方式) 用于设定网页字符集，便于浏览器解析与渲染页面
+                <meta http-equiv="content-Type" content="text/html;charset=utf-8">  //旧的HTML，不推荐
+                <meta charset="utf-8"> //HTML5设定网页字符集的方式，推荐使用UTF-8
+            B. X-UA-Compatible(浏览器采取何种版本渲染当前页面) 用于告知浏览器以何种版本来渲染页面。（一般都设置为最新模式，在各大框架中这个设置也很常见。）
+                <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/> //指定IE和Chrome使用最新版本渲染当前页面
+            C. cache-control(指定请求和响应遵循的缓存机制) 指导浏览器如何缓存某个响应以及缓存多长时间。
+                <meta http-equiv="cache-control" content="no-cache">
+                共有以下几种用法：
+                    no-cache: 先发送请求，与服务器确认该资源是否被更改，如果未被更改，则使用缓存。
+                    no-store: 不允许缓存，每次都要去服务器上，下载完整的响应。（安全措施）
+                    public : 缓存所有响应，但并非必须。因为max-age也可以做到相同效果
+                    private : 只为单个用户缓存，因此不允许任何中继进行缓存。（比如说CDN就不允许缓存private的响应）
+                    maxage : 表示当前请求开始，该响应在多久内能被缓存和重用，而不去服务器重新请求。例如：max-age=60表示响应可以再缓存和重用 60 秒。
+                用法.(禁止百度自动转码)
+                    说明：用于禁止当前页面在移动端浏览时，被百度自动转码。虽然百度的本意是好的，但是转码效果很多时候却不尽人意。所以可以在head中加入例子中的那句话，就可以避免百度自动转码了。
+                    <meta http-equiv="Cache-Control" content="no-siteapp" />
+            D. expires(网页到期时间) 用于设定网页的到期时间，过期后网页必须到服务器上重新传输。
+                <meta http-equiv="expires" content="Sunday 26 October 2016 01:00 GMT" />
+            E. refresh(自动刷新并指向某页面)  网页将在设定的时间内，自动刷新并调向设定的网址。
+                <meta http-equiv="refresh" content="2；URL=http://www.lxxyx.win/"> //意思是2秒后跳转向我的博客
+            F. Set-Cookie(cookie设定) 如果网页过期。那么这个网页存在本地的cookies也会被自动删除。
+                <meta http-equiv="Set-Cookie" content="name, date"> //格式
+                <meta http-equiv="Set-Cookie" content="User=Lxxyx; path=/; expires=Sunday, 10-Jan-16 10:00:00 GMT"> //具体范例
+        content 用来定义name指定作用的信息，比如<meta name="keywords" content="学习, 工作">作用就是声明该页面的搜索关键词是学习或者工作，在搜索引擎中搜索工作或学习可以搜到该页面。
+Web语义化是什么，是为了解决什么问题
+    以前一直被忽略思考的，只读了一些html语义化的文章，语义化标签应该就是让人跟机器都更容易的读懂标签，比如html5中的<header><footer><nav>等标签
+    <div class="header"></div>  <==> <header></header>
+    相比先前网页开发过程中仅关注布局和功能，在开发过程中使用表格布局或DIV+CSS布局，越来越多的人关注HTML语义化，核心是语义化可以带来显而易见的好处：
+        清晰的页面结构。去掉或样式丢失的时候,也能让页面呈现清晰的结构，增强页面的可读性。
+        支持更多的设备。屏幕阅读器会完全根据你的标记来“读”你的网页。更好的支持浏览器的阅读模式等。
+        有利于SEO。和搜索引擎建立良好沟通，有助于爬虫抓取更多的有效信息，搜索引擎的爬虫也依赖于标记来确定上下文和各个关键字的权重。
+        便于团队开发和维护。在团队中大家都遵循同一个标准，可以减少很多差异化的东西，方便开发和维护，提高开发效率，甚至实现模块化开发
+
+链接是什么概念，对应什么标签？
+    <a> 标签定义超链接，用于从一页面链接到另一页面。
+
+常用标签都有哪些，都适合用在什么场景
+    <h1> ~ <h6> 显示标题
+    <p> 段落
+    <img> 图像，属性src用来定义图像的URL地址
+    <a> 超链接，其中属性href创建指向另一个文档的链接，name创建文档内的书签
+    <div> 块级元素，它是可用于组合其他 HTML 元素的容器
+    <span> 元素是内联元素
+
+表单标签都有哪些，对应着什么功能，都有哪些属性
+    <form>
+    <input>
+    <button>
+    <select>
+    <textarea>
+
+ol, ul, li, dl, dd, dt等这些标签都适合用在什么地方，举个例子
+    无序列表
+        <ul>
+            <li>a</li>
+            <li>b</li>
+        </ul>
+    有序列表
+        <ol>
+            <li>a</li>
+            <li>b</li>
+        </ol>
+    自定义列表
+        自定义列表不仅仅是一列项目，而是项目及其注释的组合。
+        自定义列表以 <dl> 标签开始。每个自定义列表项以 <dt> 开始。每个自定义列表项的定义以 <dd> 开始。
+        <dl>
+            <dt>a</dt>
+            <dd>- a info</dd>
+            <dt>b</dt>
+            <dd>- b info</dd>
+        </dl>
+
+写在最后，原来还是要端正态度，一个个问题认真对待，虽然有些问题是特别简单的，但有些也是被一直忽略的，希望从现在其养成好的习惯。
