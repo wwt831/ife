@@ -1,0 +1,53 @@
+4、
+background 背景
+	background-color: 为背景设置一个纯色。
+		background-color: yellow;
+
+	background-image: 指定在元素的背景中出现的背景图像。这可以是静态文件，也可以是生成的渐变。
+		background-image: url(https://mdn.mozillademos.org/files/13026/fire-ball-icon.png);
+		线性渐变是通过linear-gradient()函数传入的，它是一个background-image属性的值。函数至少需要用逗号分隔的三个参数——背景中渐变的方向，开始的颜色和结尾的颜色。
+			background-image: linear-gradient(to bottom, orange, yellow)
+
+	background-position:指定背景应该出现在元素背景中的位置。通常，该属性将使用两个通过空格分隔的值，该空间指定了图像的水平(x)和垂直(y)坐标。图像的左上角是原点(0,0)。把背景想象成一个图形，x坐标从左到右，y坐标从上到下。
+
+	background-repeat: 指定背景是否应该被重复(平铺)。
+		no-repeat: 图像将不会重复:它只会显示一次。
+		repeat-x: 图像将在整个背景中水平地重复。
+		repeat-y: 图像会在背景下垂直地重复。
+
+	background-attachment: 当内容滚动时，指定元素背景的行为，例如，它是滚动的内容，还是固定的?
+		scroll: 这将把背景修改为页面视图，因此它将在页面滚动时滚动。注意，我们说的是视图，而不是元素——如果你滚动实际的背景设置的元素，而不是页面，背景不会滚动。
+		fixed: 这可以在页面的位置上固定背景，所以当页面滚动时，它不会滚动，不管你是滚动页面还是背景设置的元素，它都会保持在相同的位置。
+		local:这个值后来被添加了(它只在Internet Explorer 9+中得到支持，而其他的则在IE4+中得到支持)，因为scroll值相当混乱，并且在许多情况下并没有真正做您想要的事情。  local 值将背景设置为它所设置的元素的背景，因此当您滚动元素时，背景会随之滚动。
+
+	background: 在一行中指定以上五个属性的缩写。
+		div {
+			background-color: yellow;
+			background-image: linear-gradient(to bottom, yellow, #dddd00 50%, orange);
+			background-repeat: no-repeat;
+			background-position: 99% center;
+		}
+		<==>
+		div {
+			background: yellow linear-gradient(to bottom, yellow, #dddd00 50%, orange) no-repeat 99% center;
+		}
+	background-size: 允许动态调整背景图像的大小。
+		background-size: 16px 16px;
+
+border边框
+	border-width
+	border-style  solid dashed dotted
+	border-color
+	border-top border-left border-right border-bottom
+
+	{border-bottom: 6px solid red;}
+
+列表ul ol
+	list-style-type 
+		ul {list-style-type: circle;}
+	list-style-image
+		ul {list-style-image: url(head.png)}
+	list-style-position
+		ul {list-style-position:inside;}
+	list-style 3 个列表样式属性合并为一个方便的属性：
+		li {list-style : url(example.gif) square inside}

@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+
+<html>
+	<head>
+	<style type="text/css">
+	h1 {
+		font-size: 32px;
+		text-align: left;
+		color: #000066
+	}
+	p {
+
+	}
+	.content {
+		color: #000033;
+		line-height: 1.5;
+		text-indent: 2em;
+		font-size: 14px;
+	}
+	.header {
+		/*background-color: yellow;*/
+		/*background-image: linear-gradient(to left, yellow, orange);*/
+		background-image: url(head.png);
+		background-size: 100% 30px;
+		width: 100px;
+		color: #000033;
+		font-size: 18px;
+	}
+	.myborder{
+		/*border-bottom: 6px solid red;*/
+		border-style: solid dotted dashed double;
+	}
+	td {
+		font-size: 14px;
+	}
+	.key{
+		color: green;
+		text-align: right;
+	}
+	[td-value]{
+		color: blue;
+		text-align: right;
+	}
+	[td-value="left"]{
+		color: red;
+		text-align: right;
+	}
+	[td-value~="ss"]{
+		color: black;
+		text-align: right;
+	}
+	/* 这些样式将在任何情况下应用于我们的链接 */
+	a {
+  		color: blue;
+	  	font-weight: bold;
+	}
+
+	/* 我们想让被访问过的链接和未被访问的链接看起来一样 */
+	a:visited {
+	  color: blue;
+	}
+	/* 当光标悬停于链接，键盘激活或锁定链接时，我们让链接呈现高亮 */
+	a:hover,
+	a:active,
+	a:focus {
+	  color: darkred;
+	  text-decoration: none;
+	}
+	ul {
+		/*list-style-type : square*/
+		/*list-style-image : url(head.png)*/
+		list-style : url(head.png) square inside
+	}
+
+	</style>
+		
+	</head>
+	<body>
+		<div>
+			<h1>个人简历</h1>
+		</div>
+		<div>
+			<p class="header">基本信息</p>
+			<hr>
+			<table>
+			<tr><td class="key">姓名</td><td td-value>oor</td> <td class="key">出生年月</td><td td-value>199605</td> <td rowspan="5" ><img src="head.png"></td></tr>
+			<tr><td class="key">民族</td><td td-value>汉</td> <td class="key">身高</td><td td-value>167cm</td></tr>
+			<tr><td class="key">电话</td><td td-value>13889898899</td> <td class="key">政治面貌</td><td td-value="left">党员</td></tr>
+			<tr><td class="key">邮箱</td><td td-value>taiyuan@163.com</td> <td class="key">毕业院校</td><td td-value>北京科技大学</td></tr>
+			<tr><td class="key">住址</td><td td-value>北京市</td> <td class="key">学历</td><td td-value="aa ss">本科</td></tr>
+			</table>
+		</div>
+		<div>
+			<p class="header">教育背景</p>
+			<hr>
+			<table>
+				<tr><td>2012.07-2016.06</td><td>北京科技大学</td><td>市场营销（本科）</td></tr>
+				<tr><td colspan="3">主修课程</td></tr>
+				<tr><td colspan="3">管理学、经济学、管理信息系统、统计学、会计学、财务管理、市场营销、经济法、消费者行为学、国际市场营销</td></tr>
+			</table>
+		</div>
+		<div>
+			<p class="header">工作经历</p>
+			<hr>
+			<table>
+				<tr><td>2012.07-2016.06</td><td>北京科技有限公司</td><td>市场营销（本科）</td></tr>
+				<tr><td colspan="3">
+					<ul>
+						<li>负责公司线上资源的销售工作（以开拓客户为主），公司主要资源以广点通、智慧推、百度、小米、360、我们互等；</li>
+						<li>实时了解行业的变化，跟踪客户的详细数据，为客户制定更完善的投资计划
+						</li>
+					</ul>
+				</td></tr>
+			</table>
+		</div>
+		<div>
+			<p class="header">自我评价</p>
+			<hr>
+			<p class="content">深度互联网从业人员，对互联网保持高度敏感性和关注度，熟悉产品开发流程，有很强的产品规划、需求分析、交互设计能能力，能独立承担APP和web项目的管控工作，善于沟通、贴近用户。</p>
+		</div>
+		<div class="myborder">
+			<p class="header">我的主页</p>
+			<hr>
+			<a href="http://www.baidu.com">点击了解更多</a>
+		</div>
+
+	</body>
+</html>
